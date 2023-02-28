@@ -21,29 +21,29 @@
 /* An empty seq is one that is just MSGPACK_PP_SEQ_NIL */
 #
 # define MSGPACK_PP_SEQ_DETAIL_IS_EMPTY(seq) \
-	MSGPACK_PP_COMPL \
-		( \
-		MSGPACK_PP_SEQ_DETAIL_IS_NOT_EMPTY(seq) \
-		) \
+    MSGPACK_PP_COMPL \
+        ( \
+        MSGPACK_PP_SEQ_DETAIL_IS_NOT_EMPTY(seq) \
+        ) \
 /**/
 #
 # define MSGPACK_PP_SEQ_DETAIL_IS_EMPTY_SIZE(size) \
-	MSGPACK_PP_COMPL \
-		( \
-		MSGPACK_PP_SEQ_DETAIL_IS_NOT_EMPTY_SIZE(size) \
-		) \
+    MSGPACK_PP_COMPL \
+        ( \
+        MSGPACK_PP_SEQ_DETAIL_IS_NOT_EMPTY_SIZE(size) \
+        ) \
 /**/
 #
 # define MSGPACK_PP_SEQ_DETAIL_IS_NOT_EMPTY(seq) \
-	MSGPACK_PP_SEQ_DETAIL_IS_NOT_EMPTY_SIZE(MSGPACK_PP_SEQ_DETAIL_EMPTY_SIZE(seq)) \
+    MSGPACK_PP_SEQ_DETAIL_IS_NOT_EMPTY_SIZE(MSGPACK_PP_SEQ_DETAIL_EMPTY_SIZE(seq)) \
 /**/
 #
 # define MSGPACK_PP_SEQ_DETAIL_IS_NOT_EMPTY_SIZE(size) \
-	MSGPACK_PP_BOOL(size) \
+    MSGPACK_PP_BOOL(size) \
 /**/
 #
 # define MSGPACK_PP_SEQ_DETAIL_EMPTY_SIZE(seq) \
-	MSGPACK_PP_DEC(MSGPACK_PP_SEQ_SIZE(seq (nil))) \
+    MSGPACK_PP_DEC(MSGPACK_PP_SEQ_SIZE(seq (nil))) \
 /**/
 #
 # endif

@@ -59,29 +59,29 @@ include CMakeFiles/cloud_loc.dir/flags.make
 
 CMakeFiles/cloud_loc.dir/c3-main.cpp.o: CMakeFiles/cloud_loc.dir/flags.make
 CMakeFiles/cloud_loc.dir/c3-main.cpp.o: c3-main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/workspace/c3-project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cloud_loc.dir/c3-main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cloud_loc.dir/c3-main.cpp.o -c /home/workspace/c3-project/c3-main.cpp
+    @$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/workspace/c3-project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cloud_loc.dir/c3-main.cpp.o"
+    /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cloud_loc.dir/c3-main.cpp.o -c /home/workspace/c3-project/c3-main.cpp
 
 CMakeFiles/cloud_loc.dir/c3-main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cloud_loc.dir/c3-main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/workspace/c3-project/c3-main.cpp > CMakeFiles/cloud_loc.dir/c3-main.cpp.i
+    @$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cloud_loc.dir/c3-main.cpp.i"
+    /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/workspace/c3-project/c3-main.cpp > CMakeFiles/cloud_loc.dir/c3-main.cpp.i
 
 CMakeFiles/cloud_loc.dir/c3-main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cloud_loc.dir/c3-main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/workspace/c3-project/c3-main.cpp -o CMakeFiles/cloud_loc.dir/c3-main.cpp.s
+    @$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cloud_loc.dir/c3-main.cpp.s"
+    /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/workspace/c3-project/c3-main.cpp -o CMakeFiles/cloud_loc.dir/c3-main.cpp.s
 
 CMakeFiles/cloud_loc.dir/helper.cpp.o: CMakeFiles/cloud_loc.dir/flags.make
 CMakeFiles/cloud_loc.dir/helper.cpp.o: helper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/workspace/c3-project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cloud_loc.dir/helper.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cloud_loc.dir/helper.cpp.o -c /home/workspace/c3-project/helper.cpp
+    @$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/workspace/c3-project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cloud_loc.dir/helper.cpp.o"
+    /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cloud_loc.dir/helper.cpp.o -c /home/workspace/c3-project/helper.cpp
 
 CMakeFiles/cloud_loc.dir/helper.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cloud_loc.dir/helper.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/workspace/c3-project/helper.cpp > CMakeFiles/cloud_loc.dir/helper.cpp.i
+    @$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cloud_loc.dir/helper.cpp.i"
+    /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/workspace/c3-project/helper.cpp > CMakeFiles/cloud_loc.dir/helper.cpp.i
 
 CMakeFiles/cloud_loc.dir/helper.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cloud_loc.dir/helper.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/workspace/c3-project/helper.cpp -o CMakeFiles/cloud_loc.dir/helper.cpp.s
+    @$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cloud_loc.dir/helper.cpp.s"
+    /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/workspace/c3-project/helper.cpp -o CMakeFiles/cloud_loc.dir/helper.cpp.s
 
 # Object files for target cloud_loc
 cloud_loc_OBJECTS = \
@@ -390,8 +390,8 @@ cloud_loc: /usr/lib/x86_64-linux-gnu/libvtksys-6.3.so.6.3.0
 cloud_loc: /usr/lib/x86_64-linux-gnu/libproj.so
 cloud_loc: /usr/lib/x86_64-linux-gnu/libvtkCommonCore-6.3.so.6.3.0
 cloud_loc: CMakeFiles/cloud_loc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/workspace/c3-project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable cloud_loc"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cloud_loc.dir/link.txt --verbose=$(VERBOSE)
+    @$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/workspace/c3-project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable cloud_loc"
+    $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cloud_loc.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 CMakeFiles/cloud_loc.dir/build: cloud_loc
@@ -399,10 +399,10 @@ CMakeFiles/cloud_loc.dir/build: cloud_loc
 .PHONY : CMakeFiles/cloud_loc.dir/build
 
 CMakeFiles/cloud_loc.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles/cloud_loc.dir/cmake_clean.cmake
+    $(CMAKE_COMMAND) -P CMakeFiles/cloud_loc.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/cloud_loc.dir/clean
 
 CMakeFiles/cloud_loc.dir/depend:
-	cd /home/workspace/c3-project && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/workspace/c3-project /home/workspace/c3-project /home/workspace/c3-project /home/workspace/c3-project /home/workspace/c3-project/CMakeFiles/cloud_loc.dir/DependInfo.cmake --color=$(COLOR)
+    cd /home/workspace/c3-project && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/workspace/c3-project /home/workspace/c3-project /home/workspace/c3-project /home/workspace/c3-project /home/workspace/c3-project/CMakeFiles/cloud_loc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/cloud_loc.dir/depend
 

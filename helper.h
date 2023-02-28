@@ -12,45 +12,45 @@ using namespace std;
 const double pi = M_PI;
 
 struct Point{
-	double x, y, z;
+    double x, y, z;
 
-	Point()
-		: x(0), y(0), z(0){}
+    Point()
+        : x(0), y(0), z(0){}
 
-	Point(double setX, double setY, double setZ)
-		: x(setX), y(setY), z(setZ){}
+    Point(double setX, double setY, double setZ)
+        : x(setX), y(setY), z(setZ){}
 
-	void Print(){
-		cout << "x: " << x << " y: " << y << " z: " << z << endl;
-	}
+    void Print(){
+        cout << "x: " << x << " y: " << y << " z: " << z << endl;
+    }
 };
 
 struct Rotate{
-	double yaw, pitch, roll;
+    double yaw, pitch, roll;
 
-	Rotate()
-		: yaw(0), pitch(0), roll(0){}
+    Rotate()
+        : yaw(0), pitch(0), roll(0){}
 
-	Rotate(double setYaw, double setPitch, double setRoll)
-		: yaw(setYaw), pitch(setPitch), roll(setRoll){}
+    Rotate(double setYaw, double setPitch, double setRoll)
+        : yaw(setYaw), pitch(setPitch), roll(setRoll){}
 
-	void Print(){
-		cout << "yaw: " << yaw << " pitch: " << pitch << " roll: " << roll << endl;
-	}
+    void Print(){
+        cout << "yaw: " << yaw << " pitch: " << pitch << " roll: " << roll << endl;
+    }
 };
 
 struct Pose{
 
-	Point position;
-	Rotate rotation;
+    Point position;
+    Rotate rotation;
 
-	Pose()
-		: position(Point(0, 0, 0)), rotation(Rotate(0, 0, 0)){}
+    Pose()
+        : position(Point(0, 0, 0)), rotation(Rotate(0, 0, 0)){}
 
-	Pose(Point setPos, Rotate setRotation)
-		: position(setPos), rotation(setRotation) {}
+    Pose(Point setPos, Rotate setRotation)
+        : position(setPos), rotation(setRotation) {}
 
-	Pose operator-(const Pose& p)
+    Pose operator-(const Pose& p)
     {
         Pose result(Point(position.x-p.position.x, position.y-p.position.y, position.z-p.position.z), Rotate(rotation.yaw-p.rotation.yaw, rotation.pitch-p.rotation.pitch, rotation.roll-p.rotation.roll) );
         return result;
@@ -59,21 +59,21 @@ struct Pose{
 
 struct ControlState{
 
-	float t;
-	float s;
-	float b;
+    float t;
+    float s;
+    float b;
 
-	ControlState(float setT, float setS, float setB)
-		: t(setT), s(setS), b(setB) {}
+    ControlState(float setT, float setS, float setB)
+        : t(setT), s(setS), b(setB) {}
 };
 
 struct Vect2{
 
-	double mag;
-	double theta;
+    double mag;
+    double theta;
 
-	Vect2(double setMag, double setTheta)
-		: mag(setMag), theta(setTheta) {}
+    Vect2(double setMag, double setTheta)
+        : mag(setMag), theta(setTheta) {}
 };
 
 struct Color
@@ -109,143 +109,143 @@ Eigen::Quaternionf getQuaternion(float theta);
 void renderBox(pcl::visualization::PCLVisualizer::Ptr& viewer, BoxQ box, int id, Color color, float opacity);
 
 struct LineSegment{
-	// slope of y component
-	double my;
-	// slope of x component
-	double mx;
-	//  (y{mx=1}/x{mx=0}) intercept
-	double b;
-	// (x{mx=1}/y{mx=0}) interval
-	double min;
-	double max;
+    // slope of y component
+    double my;
+    // slope of x component
+    double mx;
+    //  (y{mx=1}/x{mx=0}) intercept
+    double b;
+    // (x{mx=1}/y{mx=0}) interval
+    double min;
+    double max;
 
-	LineSegment(float setMy, double setMx, double setB, double setMin, double setMax)
+    LineSegment(float setMy, double setMx, double setB, double setMin, double setMax)
                 : my(setMy), mx(setMx), b(setB), min(setMin), max(setMax){
                 if (setMy == 0 and setMx == 0){
-                	my = 0;
-                	mx = 1;
+                    my = 0;
+                    mx = 1;
                 }
     }
     LineSegment()
-    			: my(1), mx(1), b(1), min(-1), max(0){}
-    //			p1
-    //			o
-    //		p2		  p3
-   	// 		o---------o
+                : my(1), mx(1), b(1), min(-1), max(0){}
+    //            p1
+    //            o
+    //        p2          p3
+       //         o---------o
 
     bool Contains(double p1, double p2, double p3){
-    	return  (p2 <= p1 ) && (p1 <= p3) ;
+        return  (p2 <= p1 ) && (p1 <= p3) ;
     }
 
     bool Intersect(LineSegment line, Point& intersection){
-    	if ( (my/mx) == (line.my/line.mx) ){
-    		// lines dont intersect or are on top of each other
-    		return false;
-    	}   
-    	if(mx == 0){
-    		intersection.x = b;
-    		intersection.y = (line.my/line.mx) * intersection.x + line.b;
-    		return Contains(intersection.y, min, max) && Contains(intersection.x, line.min, line.max);
-    	}
-    	else if(line.mx == 0){
-    		intersection.x = line.b;
-    		intersection.y = (my/mx) * intersection.x + b;
-    		return Contains(intersection.y, line.min, line.max) && Contains(intersection.x, min, max);
-    	}
-    	// not dealing with any vertical or horizontal lines and lines are not the same slope
-    	else{
+        if ( (my/mx) == (line.my/line.mx) ){
+            // lines dont intersect or are on top of each other
+            return false;
+        }   
+        if(mx == 0){
+            intersection.x = b;
+            intersection.y = (line.my/line.mx) * intersection.x + line.b;
+            return Contains(intersection.y, min, max) && Contains(intersection.x, line.min, line.max);
+        }
+        else if(line.mx == 0){
+            intersection.x = line.b;
+            intersection.y = (my/mx) * intersection.x + b;
+            return Contains(intersection.y, line.min, line.max) && Contains(intersection.x, min, max);
+        }
+        // not dealing with any vertical or horizontal lines and lines are not the same slope
+        else{
 
-    		intersection.x = (b - line.b)/( (line.my/line.mx) - (my/mx) ) ;
-    		intersection.y = (my/mx) * intersection.x + b;
-    		return Contains(intersection.x, min, max) && Contains(intersection.x, line.min, line.max);
-    	}
+            intersection.x = (b - line.b)/( (line.my/line.mx) - (my/mx) ) ;
+            intersection.y = (my/mx) * intersection.x + b;
+            return Contains(intersection.x, min, max) && Contains(intersection.x, line.min, line.max);
+        }
     }
 
     void Print(){
-    	cout << "my: " << my << " mx: " << mx << " b: " << b << " min: " << min << " max: " << max << endl;
+        cout << "my: " << my << " mx: " << mx << " b: " << b << " min: " << min << " max: " << max << endl;
     }
 
 };
 
 struct Lidar{
 
-	double x;
-	double y;
-	double theta;
-	double range;
-	int res;
+    double x;
+    double y;
+    double theta;
+    double range;
+    int res;
 
-	Lidar(double setX, double setY, double setTheta, double setRange, int setRes)
-		: x(setX), y(setY), theta(setTheta), range(setRange), res(setRes){}
+    Lidar(double setX, double setY, double setTheta, double setRange, int setRes)
+        : x(setX), y(setY), theta(setTheta), range(setRange), res(setRes){}
 
-	pcl::PointCloud<pcl::PointXYZ>::Ptr scan(vector<LineSegment> walls){
+    pcl::PointCloud<pcl::PointXYZ>::Ptr scan(vector<LineSegment> walls){
 
-		pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new PointCloudT); 
-		double deltaTheta = (2*pi)/double(res);
-		double residue = .1*deltaTheta;
-		for(double angle = theta; angle < theta + 2*pi - residue ; angle += deltaTheta ){
+        pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new PointCloudT); 
+        double deltaTheta = (2*pi)/double(res);
+        double residue = .1*deltaTheta;
+        for(double angle = theta; angle < theta + 2*pi - residue ; angle += deltaTheta ){
 
-			LineSegment ray;
+            LineSegment ray;
 
-			//cout << "angle " << angle << endl;
+            //cout << "angle " << angle << endl;
 
-			// check if angle is vertical
-			if( ceil(tan(angle-pi/2)*1000)/1000 == 0){
+            // check if angle is vertical
+            if( ceil(tan(angle-pi/2)*1000)/1000 == 0){
 
-				//cout << "vertical" << endl;
+                //cout << "vertical" << endl;
 
-				double yb = sin(angle) * range;
-				double minb = min(y,yb);
-				double maxb = max(y,yb);
+                double yb = sin(angle) * range;
+                double minb = min(y,yb);
+                double maxb = max(y,yb);
 
-				ray = LineSegment(1, 0, x, minb, maxb);
+                ray = LineSegment(1, 0, x, minb, maxb);
 
-			}
-			else{
+            }
+            else{
 
-				double m = ceil(tan(angle)*1000)/1000;
-				double b = y - x*m;
+                double m = ceil(tan(angle)*1000)/1000;
+                double b = y - x*m;
 
-				double xb = cos(angle) * range;
-				double minb = min(x,xb);
-				double maxb = max(x,xb);
+                double xb = cos(angle) * range;
+                double minb = min(x,xb);
+                double maxb = max(x,xb);
 
-				ray = LineSegment(m, 1, b, minb, maxb);
-			}
+                ray = LineSegment(m, 1, b, minb, maxb);
+            }
 
-			double closetDist = range;
-			Point cPoint;
-			for(LineSegment wall : walls){
-				Point point;
-				if( ray.Intersect(wall, point) ){
-					//cout << "collision" << endl;
-					//ray.Print();
-					//wall.Print();
-					double distance = sqrt( (x - point.x)*(x - point.x) + (y - point.y)*(y - point.y) );
-					//cout << "dis " << distance << endl;
-					//point.Print();
-					if( distance < closetDist){
-						closetDist = distance; 
-						cPoint = point;
-					}
-					
-				}
-			}
-			if( closetDist < range ){
-				// transform to lidars local coordinates
-				//cout << "angle " << angle << endl;
-				//cout << closetDist << endl;
-				double pointX = closetDist * cos(angle-theta);
-				double pointY = closetDist * sin(angle-theta);
-				cloud->points.push_back(pcl::PointXYZ(pointX, pointY, 0));
-			}
-		}
-		return cloud;
-	}
+            double closetDist = range;
+            Point cPoint;
+            for(LineSegment wall : walls){
+                Point point;
+                if( ray.Intersect(wall, point) ){
+                    //cout << "collision" << endl;
+                    //ray.Print();
+                    //wall.Print();
+                    double distance = sqrt( (x - point.x)*(x - point.x) + (y - point.y)*(y - point.y) );
+                    //cout << "dis " << distance << endl;
+                    //point.Print();
+                    if( distance < closetDist){
+                        closetDist = distance; 
+                        cPoint = point;
+                    }
+                    
+                }
+            }
+            if( closetDist < range ){
+                // transform to lidars local coordinates
+                //cout << "angle " << angle << endl;
+                //cout << closetDist << endl;
+                double pointX = closetDist * cos(angle-theta);
+                double pointY = closetDist * sin(angle-theta);
+                cloud->points.push_back(pcl::PointXYZ(pointX, pointY, 0));
+            }
+        }
+        return cloud;
+    }
 
-	void Move(double step, double rotate){
-		theta += rotate;
-		x += step * cos(theta);
-		y += step * sin(theta);
-	}
+    void Move(double step, double rotate){
+        theta += rotate;
+        x += step * cos(theta);
+        y += step * sin(theta);
+    }
 };

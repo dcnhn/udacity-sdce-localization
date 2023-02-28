@@ -37,13 +37,13 @@
 #    define MSGPACK_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EMPTY(macro, data, seq)
 #
 #    define MSGPACK_PP_SEQ_FOR_EACH_I_DETAIL_CHECK(macro, data, seq) \
-		MSGPACK_PP_IIF \
-			( \
-			MSGPACK_PP_SEQ_DETAIL_IS_NOT_EMPTY(seq), \
-			MSGPACK_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EXEC, \
-			MSGPACK_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EMPTY \
-			) \
-		(macro, data, seq) \
+        MSGPACK_PP_IIF \
+            ( \
+            MSGPACK_PP_SEQ_DETAIL_IS_NOT_EMPTY(seq), \
+            MSGPACK_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EXEC, \
+            MSGPACK_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EMPTY \
+            ) \
+        (macro, data, seq) \
 /**/
 #
 # define MSGPACK_PP_SEQ_FOR_EACH_I_P(r, x) MSGPACK_PP_TUPLE_ELEM(5, 4, x)
@@ -55,22 +55,22 @@
 # endif
 #
 # define MSGPACK_PP_SEQ_FOR_EACH_I_O_I(macro, data, seq, i, sz) \
-	MSGPACK_PP_SEQ_FOR_EACH_I_O_I_DEC(macro, data, seq, i, MSGPACK_PP_DEC(sz)) \
+    MSGPACK_PP_SEQ_FOR_EACH_I_O_I_DEC(macro, data, seq, i, MSGPACK_PP_DEC(sz)) \
 /**/
 # define MSGPACK_PP_SEQ_FOR_EACH_I_O_I_DEC(macro, data, seq, i, sz) \
-	( \
-	macro, \
-	data, \
-	MSGPACK_PP_IF \
-		( \
-		sz, \
-		MSGPACK_PP_SEQ_FOR_EACH_I_O_I_TAIL, \
-		MSGPACK_PP_SEQ_FOR_EACH_I_O_I_NIL \
-		) \
-	(seq), \
-	MSGPACK_PP_INC(i), \
-	sz \
-	) \
+    ( \
+    macro, \
+    data, \
+    MSGPACK_PP_IF \
+        ( \
+        sz, \
+        MSGPACK_PP_SEQ_FOR_EACH_I_O_I_TAIL, \
+        MSGPACK_PP_SEQ_FOR_EACH_I_O_I_NIL \
+        ) \
+    (seq), \
+    MSGPACK_PP_INC(i), \
+    sz \
+    ) \
 /**/
 # define MSGPACK_PP_SEQ_FOR_EACH_I_O_I_TAIL(seq) MSGPACK_PP_SEQ_TAIL(seq)
 # define MSGPACK_PP_SEQ_FOR_EACH_I_O_I_NIL(seq) MSGPACK_PP_NIL
@@ -97,13 +97,13 @@
 #    define MSGPACK_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EMPTY(r, macro, data, seq)
 #
 #    define MSGPACK_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK(r, macro, data, seq) \
-		MSGPACK_PP_IIF \
-			( \
-			MSGPACK_PP_SEQ_DETAIL_IS_NOT_EMPTY(seq), \
-			MSGPACK_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EXEC, \
-			MSGPACK_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EMPTY \
-			) \
-		(r, macro, data, seq) \
+        MSGPACK_PP_IIF \
+            ( \
+            MSGPACK_PP_SEQ_DETAIL_IS_NOT_EMPTY(seq), \
+            MSGPACK_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EXEC, \
+            MSGPACK_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EMPTY \
+            ) \
+        (r, macro, data, seq) \
 /**/
 #
 # endif

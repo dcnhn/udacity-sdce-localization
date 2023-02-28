@@ -69,9 +69,9 @@ CMAKE_BINARY_DIR = /home/workspace/c3-project
 
 # All Build rule for target.
 CMakeFiles/cloud_loc.dir/all:
-	$(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/depend
-	$(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/workspace/c3-project/CMakeFiles --progress-num=1,2,3 "Built target cloud_loc"
+    $(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/depend
+    $(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/build
+    @$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/workspace/c3-project/CMakeFiles --progress-num=1,2,3 "Built target cloud_loc"
 .PHONY : CMakeFiles/cloud_loc.dir/all
 
 # Include target in all.
@@ -81,9 +81,9 @@ all: CMakeFiles/cloud_loc.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cloud_loc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/workspace/c3-project/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cloud_loc.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/workspace/c3-project/CMakeFiles 0
+    $(CMAKE_COMMAND) -E cmake_progress_start /home/workspace/c3-project/CMakeFiles 3
+    $(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cloud_loc.dir/all
+    $(CMAKE_COMMAND) -E cmake_progress_start /home/workspace/c3-project/CMakeFiles 0
 .PHONY : CMakeFiles/cloud_loc.dir/rule
 
 # Convenience name for target.
@@ -93,7 +93,7 @@ cloud_loc: CMakeFiles/cloud_loc.dir/rule
 
 # clean rule for target.
 CMakeFiles/cloud_loc.dir/clean:
-	$(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/clean
+    $(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/clean
 .PHONY : CMakeFiles/cloud_loc.dir/clean
 
 # clean rule for target.
@@ -108,6 +108,6 @@ clean: CMakeFiles/cloud_loc.dir/clean
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+    $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

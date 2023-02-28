@@ -17,54 +17,54 @@ $configs = @("Debug"; "Release")
 $runtimes = @("Static"; "Dynamic")
 
 $runtime_suffixes = @{
-	"DynamicRelease"="MD";
-	"DynamicDebug"="MDd";
-	"StaticRelease"="MT";
-	"StaticDebug"="MTd"
+    "DynamicRelease"="MD";
+    "DynamicDebug"="MDd";
+    "StaticRelease"="MT";
+    "StaticDebug"="MTd"
 }
 
 $arch_generators = @{
-	"x86"="Visual Studio 14 2015";
-	"x64"="Visual Studio 14 2015 Win64"
+    "x86"="Visual Studio 14 2015";
+    "x64"="Visual Studio 14 2015 Win64"
 }
 
 $extra_cmake_flags = @{
-	"MD"="";
-	"MDd"="";
-	"MT"="-DRPCLIB_MSVC_STATIC_RUNTIME=ON";
-	"MTd"="-DRPCLIB_MSVC_STATIC_RUNTIME=ON"
+    "MD"="";
+    "MDd"="";
+    "MT"="-DRPCLIB_MSVC_STATIC_RUNTIME=ON";
+    "MTd"="-DRPCLIB_MSVC_STATIC_RUNTIME=ON"
 }
 
 function build_config($arch, $runtime, $config) {
-	echo "Building $arch | $runtime | $config..."
-	$special_build_dir = "build_$arch$runtime$config".ToLower()
-	echo "Build directory: $special_build_dir"
-	mkdir $special_build_dir
-	pushd $special_build_dir
+    echo "Building $arch | $runtime | $config..."
+    $special_build_dir = "build_$arch$runtime$config".ToLower()
+    echo "Build directory: $special_build_dir"
+    mkdir $special_build_dir
+    pushd $special_build_dir
 
-	$suffix = $runtime_suffixes["$runtime$config"]
-	$gen = $arch_generators[$arch]
-	$flags = $extra_cmake_flags[$suffix]
-	$name_suff = "{0}-{1}" -f $suffix.ToLower(),$arch
-	$name_suff.replace(' ', '')
+    $suffix = $runtime_suffixes["$runtime$config"]
+    $gen = $arch_generators[$arch]
+    $flags = $extra_cmake_flags[$suffix]
+    $name_suff = "{0}-{1}" -f $suffix.ToLower(),$arch
+    $name_suff.replace(' ', '')
 
-	cmake ../$SRC -G $gen $CMAKE_FLAGS $flags -DRPCLIB_NAME_SUFFIX="$name_suff"
-	cmake --build . --config $config
+    cmake ../$SRC -G $gen $CMAKE_FLAGS $flags -DRPCLIB_NAME_SUFFIX="$name_suff"
+    cmake --build . --config $config
 
-	popd
+    popd
 }
 
 function get_macro($file, $macro) {
-	$m = $file | Select-String -Pattern "${macro} ([0-9]+)" -AllMatches
-	return $m.Matches.Groups[1].Value
+    $m = $file | Select-String -Pattern "${macro} ([0-9]+)" -AllMatches
+    return $m.Matches.Groups[1].Value
 }
 
 foreach ($arch in $archs) {
-	foreach ($config in $configs) {
-		foreach ($runtime in $runtimes) {
-			build_config $arch $runtime $config
-		}
-	}
+    foreach ($config in $configs) {
+        foreach ($runtime in $runtimes) {
+            build_config $arch $runtime $config
+        }
+    }
 }
 
 popd

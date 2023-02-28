@@ -58,8 +58,8 @@ CMAKE_BINARY_DIR = /home/workspace/c3-project
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+    @$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+    /usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -69,8 +69,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/local/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+    @$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+    /usr/local/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/workspace/c3-project/CMakeFiles /home/workspace/c3-project/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/workspace/c3-project/CMakeFiles 0
+    $(CMAKE_COMMAND) -E cmake_progress_start /home/workspace/c3-project/CMakeFiles /home/workspace/c3-project/CMakeFiles/progress.marks
+    $(MAKE) -f CMakeFiles/Makefile2 all
+    $(CMAKE_COMMAND) -E cmake_progress_start /home/workspace/c3-project/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+    $(MAKE) -f CMakeFiles/Makefile2 clean
 .PHONY : clean
 
 # The main clean target
@@ -97,17 +97,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+    $(MAKE) -f CMakeFiles/Makefile2 preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+    $(MAKE) -f CMakeFiles/Makefile2 preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+    $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 #=============================================================================
@@ -115,12 +115,12 @@ depend:
 
 # Build rule for target.
 cloud_loc: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cloud_loc
+    $(MAKE) -f CMakeFiles/Makefile2 cloud_loc
 .PHONY : cloud_loc
 
 # fast build rule for target.
 cloud_loc/fast:
-	$(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/build
+    $(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/build
 .PHONY : cloud_loc/fast
 
 c3-main.o: c3-main.cpp.o
@@ -129,7 +129,7 @@ c3-main.o: c3-main.cpp.o
 
 # target to build an object file
 c3-main.cpp.o:
-	$(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/c3-main.cpp.o
+    $(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/c3-main.cpp.o
 .PHONY : c3-main.cpp.o
 
 c3-main.i: c3-main.cpp.i
@@ -138,7 +138,7 @@ c3-main.i: c3-main.cpp.i
 
 # target to preprocess a source file
 c3-main.cpp.i:
-	$(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/c3-main.cpp.i
+    $(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/c3-main.cpp.i
 .PHONY : c3-main.cpp.i
 
 c3-main.s: c3-main.cpp.s
@@ -147,7 +147,7 @@ c3-main.s: c3-main.cpp.s
 
 # target to generate assembly for a file
 c3-main.cpp.s:
-	$(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/c3-main.cpp.s
+    $(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/c3-main.cpp.s
 .PHONY : c3-main.cpp.s
 
 helper.o: helper.cpp.o
@@ -156,7 +156,7 @@ helper.o: helper.cpp.o
 
 # target to build an object file
 helper.cpp.o:
-	$(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/helper.cpp.o
+    $(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/helper.cpp.o
 .PHONY : helper.cpp.o
 
 helper.i: helper.cpp.i
@@ -165,7 +165,7 @@ helper.i: helper.cpp.i
 
 # target to preprocess a source file
 helper.cpp.i:
-	$(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/helper.cpp.i
+    $(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/helper.cpp.i
 .PHONY : helper.cpp.i
 
 helper.s: helper.cpp.s
@@ -174,24 +174,24 @@ helper.s: helper.cpp.s
 
 # target to generate assembly for a file
 helper.cpp.s:
-	$(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/helper.cpp.s
+    $(MAKE) -f CMakeFiles/cloud_loc.dir/build.make CMakeFiles/cloud_loc.dir/helper.cpp.s
 .PHONY : helper.cpp.s
 
 # Help Target
 help:
-	@echo "The following are some of the valid targets for this Makefile:"
-	@echo "... all (the default if no target is provided)"
-	@echo "... clean"
-	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... cloud_loc"
-	@echo "... edit_cache"
-	@echo "... c3-main.o"
-	@echo "... c3-main.i"
-	@echo "... c3-main.s"
-	@echo "... helper.o"
-	@echo "... helper.i"
-	@echo "... helper.s"
+    @echo "The following are some of the valid targets for this Makefile:"
+    @echo "... all (the default if no target is provided)"
+    @echo "... clean"
+    @echo "... depend"
+    @echo "... rebuild_cache"
+    @echo "... cloud_loc"
+    @echo "... edit_cache"
+    @echo "... c3-main.o"
+    @echo "... c3-main.i"
+    @echo "... c3-main.s"
+    @echo "... helper.o"
+    @echo "... helper.i"
+    @echo "... helper.s"
 .PHONY : help
 
 
@@ -203,6 +203,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+    $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

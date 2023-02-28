@@ -40,9 +40,9 @@ TEST_F(server_session_test, consume_big_param) {
 
 TEST_F(server_session_test, connection_closed_properly) {
 #ifdef RPCLIB_WIN32
-	const unsigned max_tries = 10;
+    const unsigned max_tries = 10;
 #else
-	const unsigned max_tries = 1000;
+    const unsigned max_tries = 1000;
 #endif
     for (unsigned counter = 0; counter < max_tries; ++counter) {
         rpc::client client("localhost", rpc::constants::DEFAULT_PORT);

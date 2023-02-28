@@ -52,13 +52,13 @@
 
 # define MSGPACK_PP_FOR_257_ERROR() MSGPACK_PP_ERROR(0x0002)
 # define MSGPACK_PP_FOR_257(s, p, o, m) \
-	MSGPACK_PP_IIF \
-		( \
-		MSGPACK_PP_FOR_257_PR(s,p), \
-		MSGPACK_PP_FOR_257_ERROR, \
-		MSGPACK_PP_EMPTY \
-		) \
-	() \
+    MSGPACK_PP_IIF \
+        ( \
+        MSGPACK_PP_FOR_257_PR(s,p), \
+        MSGPACK_PP_FOR_257_ERROR, \
+        MSGPACK_PP_EMPTY \
+        ) \
+    () \
 /**/
 // # define MSGPACK_PP_FOR_257(s, p, o, m) MSGPACK_PP_ERROR(0x0002)
 #

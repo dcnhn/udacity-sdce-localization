@@ -32,15 +32,15 @@
 # endif
 #
 #    define MSGPACK_PP_SEQ_REST_N_DETAIL_EXEC(n, seq, size) \
-		MSGPACK_PP_EXPR_IIF \
-			( \
-			MSGPACK_PP_BITAND \
-				( \
-				MSGPACK_PP_SEQ_DETAIL_IS_NOT_EMPTY_SIZE(size), \
-				MSGPACK_PP_NOT_EQUAL(n,size) \
-				), \
-			MSGPACK_PP_TUPLE_ELEM(2, 1, MSGPACK_PP_SEQ_SPLIT(MSGPACK_PP_INC(n), MSGPACK_PP_IDENTITY( (nil) seq )))() \
-			) \
+        MSGPACK_PP_EXPR_IIF \
+            ( \
+            MSGPACK_PP_BITAND \
+                ( \
+                MSGPACK_PP_SEQ_DETAIL_IS_NOT_EMPTY_SIZE(size), \
+                MSGPACK_PP_NOT_EQUAL(n,size) \
+                ), \
+            MSGPACK_PP_TUPLE_ELEM(2, 1, MSGPACK_PP_SEQ_SPLIT(MSGPACK_PP_INC(n), MSGPACK_PP_IDENTITY( (nil) seq )))() \
+            ) \
 /**/
 #
 # endif
