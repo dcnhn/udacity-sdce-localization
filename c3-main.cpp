@@ -144,8 +144,13 @@ int main(){
       cout << "Loaded " << mapCloud->points.size() << " data points from map.pcd" << endl;
     renderPointCloud(viewer, mapCloud, "map", Color(0,0,1)); 
 
-    typename pcl::PointCloud<PointT>::Ptr cloudFiltered (new pcl::PointCloud<PointT>);
+    // Variables to handle the point clouds
+    // scanCloud: new measurement of points cloud from lidar
+    // cloudFiltered: result of voxel filter
+    // transformedCloud: transformed point cloud after computing transform using ICP or NDT
     typename pcl::PointCloud<PointT>::Ptr scanCloud (new pcl::PointCloud<PointT>);
+    typename pcl::PointCloud<PointT>::Ptr cloudFiltered (new pcl::PointCloud<PointT>);
+    typename pcl::PointCloud<PointT>::Ptr transformedCloud (new pcl::PointCloud<PointT>);
 
     lidar->Listen([&new_scan, &lastScanTime, &scanCloud](auto data){
 
