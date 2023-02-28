@@ -1,3 +1,6 @@
+#ifndef HELPER_H
+#define HELPER_H
+
 #include <pcl/io/pcd_io.h>
 #include <pcl/visualization/pcl_visualizer.h>
 #include <math.h>
@@ -249,3 +252,5 @@ struct Lidar{
         y += step * sin(theta);
     }
 };
+
+#endif /* HELPER_H */
