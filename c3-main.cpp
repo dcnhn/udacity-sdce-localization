@@ -203,10 +203,11 @@ int main(){
             // TODO: (Filter scan using voxel filter)
             // typename pcl::PointCloud<PointT>::Ptr cloudFiltered (new pcl::PointCloud<PointT>);
             // typename pcl::PointCloud<PointT>::Ptr scanCloud (new pcl::PointCloud<PointT>);
-
+            float filterVal = 0.5F;
             pcl::VoxelGrid<PointT> voxelGrid;
             voxelGrid.setInputCloud(scanCloud);
-            
+            voxelGrid.setLeafSize(filterVal, filterVal, filterVal);
+            voxelGrid.filter(*cloudFiltered);
 
             // TODO: Find pose transform by using ICP or NDT matching
             //pose = ....
