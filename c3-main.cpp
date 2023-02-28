@@ -215,7 +215,8 @@ int main(){
             voxelGrid.filter(*cloudFiltered);
 
             // TODO: Find pose transform by using ICP or NDT matching
-            //pose = ....
+            Eigen::Matrix4d transformMat = ICP(mapCloud, cloudFiltered, pose, 10);
+            pose = getPose(transformMat);
 
             // TODO: Transform scan so it aligns with ego's actual pose and render that scan
 
