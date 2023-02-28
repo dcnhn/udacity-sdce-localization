@@ -201,8 +201,6 @@ int main(){
             
             new_scan = true;
             // TODO: (Filter scan using voxel filter)
-            // typename pcl::PointCloud<PointT>::Ptr cloudFiltered (new pcl::PointCloud<PointT>);
-            // typename pcl::PointCloud<PointT>::Ptr scanCloud (new pcl::PointCloud<PointT>);
             float filterVal = 0.5F;
             pcl::VoxelGrid<PointT> voxelGrid;
             voxelGrid.setInputCloud(scanCloud);
