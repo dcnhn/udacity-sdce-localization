@@ -2,7 +2,7 @@
 #include <pcl/console/time.h>
 #include <pcl/registration/icp.h>
 
-
+// Using boilerplate code from class material
 Eigen::Matrix4d ICP(PointCloudT::Ptr target, PointCloudT::Ptr source, Pose startingPose, int iterations)
 {
     // Defining a rotation matrix and translation vector
